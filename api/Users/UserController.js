@@ -17,10 +17,10 @@ exports.login=(req,res)=>{
   name: 'obj',
   in: 'body',
   required: true,
-  schema: {
-    email: 'string',
-    password: 'string',
-  }
+ schema: {
+                    $email: 'Jhon Doe',
+                    $password: '29',
+                }
 }
  */
 

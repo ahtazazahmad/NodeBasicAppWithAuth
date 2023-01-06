@@ -33,12 +33,12 @@ exports.postBook=(req, res,next) =>{
   name: 'obj',
   in: 'body',
   required: true,
-  schema: {
-    title: 'string',
-    author: 'string',
-    year: 'number',
-    pages: 'number',
-  }
+   schema: {
+        $title: 'Jhon Doe',
+        $author: 'Applet',
+        $year: 2023,
+        $pages: 129,
+                }
 }
  */
     try {
@@ -105,11 +105,11 @@ exports.updateBook=(req, res,next) =>{
   in: 'body',
   required: true,
   schema: {
-    title: 'string',
-    author: 'string',
-    year: 'number',
-    pages: 'number',
-  }
+        $title: 'Jhon Doe',
+        $author: 'Applet',
+        $year: 2023,
+        $pages: 129,
+                }
 }
  */
        let {title,author,year,pages}=req.body;

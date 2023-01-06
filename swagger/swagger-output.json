@@ -32,9 +32,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
           }
         }
       },
@@ -54,9 +51,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
           }
         }
       },
@@ -81,30 +75,33 @@
               "properties": {
                 "title": {
                   "type": "string",
-                  "example": "string"
+                  "example": "Jhon Doe"
                 },
                 "author": {
                   "type": "string",
-                  "example": "string"
+                  "example": "Applet"
                 },
                 "year": {
-                  "type": "string",
-                  "example": "number"
+                  "type": "number",
+                  "example": 2023
                 },
                 "pages": {
-                  "type": "string",
-                  "example": "number"
+                  "type": "number",
+                  "example": 129
                 }
-              }
+              },
+              "required": [
+                "title",
+                "author",
+                "year",
+                "pages"
+              ]
             }
           }
         ],
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
           }
         }
       }
@@ -119,9 +116,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
           }
         }
       },
@@ -140,30 +134,33 @@
               "properties": {
                 "title": {
                   "type": "string",
-                  "example": "string"
+                  "example": "Jhon Doe"
                 },
                 "author": {
                   "type": "string",
-                  "example": "string"
+                  "example": "Applet"
                 },
                 "year": {
-                  "type": "string",
-                  "example": "number"
+                  "type": "number",
+                  "example": 2023
                 },
                 "pages": {
-                  "type": "string",
-                  "example": "number"
+                  "type": "number",
+                  "example": 129
                 }
-              }
+              },
+              "required": [
+                "title",
+                "author",
+                "year",
+                "pages"
+              ]
             }
           }
         ],
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
           }
         }
       }
@@ -186,22 +183,23 @@
               "properties": {
                 "email": {
                   "type": "string",
-                  "example": "string"
+                  "example": "Jhon Doe"
                 },
                 "password": {
                   "type": "string",
-                  "example": "string"
+                  "example": "29"
                 }
-              }
+              },
+              "required": [
+                "email",
+                "password"
+              ]
             }
           }
         ],
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
           }
         }
       }

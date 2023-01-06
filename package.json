@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --legacy-watch bin/www.js",
+    "start": "node --legacy-watch bin/www.js",
     "swagger": "node ./swagger/swagger.js",
     "test": "mocha --timeout 10000",
     "test-nodemon": "nodemon --exec 'mocha --timeout 10000'"

@@ -6,7 +6,7 @@ const connectionUrlProd=`mongodb+srv://qriptos:${config.db.MONGO_Password_Prod}@
 const connectionUrlLocal = config.db.MONGO_URL + config.db.DATABASE_NAME
 console.log(connectionUrlLocal)
 process.env.NODE_ENV==ENV.PROD?connectionUrl=connectionUrlProd:connectionUrl=connectionUrlLocal;
-
+console.log(connectionUrl)
 const database = () => {
    mongoose
     .connect(`${connectionUrl}`,{ useNewUrlParser: true, useUnifiedTopology: true })

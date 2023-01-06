@@ -10,9 +10,9 @@ function routes(app){
  
     app.use('/api/book',authenticate.authenticate,bookRouter)
     app.use('/api/user',Header.verfiyHeader,userRouter)
-    app.use('*',(req,res)=>{
-    res.send(Response.getNotFound("Please hit a valid Endpoint"))
-    })
+    // app.use('*',(req,res)=>{
+    // res.send(Response.getNotFound("Please hit a valid Endpoint"))
+    // })
 }
 
  module.exports = routes;

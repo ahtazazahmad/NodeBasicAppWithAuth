@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var Devlogger = require('morgan');
 const cors = require('cors');
 require('dotenv').config();
+const path = require('path'); 
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./swagger/swagger-output.json')
 const bodyParser = require('body-parser')
@@ -16,10 +18,11 @@ const actuator = require('express-actuator');
 const helmet = require('helmet');
 const { config } = require('dotenv');
 const configuration =require('./config/config')
-app.use(helmet())
+// app.use(helmet())
 app.disable('x-powered-by')
 const session = require('express-session');
 const jwt = require('jsonwebtoken');
+
 //connet to database
 database()
 
@@ -29,7 +32,7 @@ app.use(session({
   saveUninitialized: false
 }));
 // app.use(sessionMiddleware)
-
+app.use(cors())
 
 //for development show logs on console
 

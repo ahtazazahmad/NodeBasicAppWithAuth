@@ -4,7 +4,7 @@ const {ENV} = require('../utils/constant');
 exports.PORT=process.env.PORT||3001;
 process.env.NODE_ENV=ENV.PROD;
 
-const host=process.env.NODE_ENV==ENV.PROD?'rich-cyan-cockroach-vest.cyclic.app':'localhost:3001';
+const host=process.env.NODE_ENV==ENV.PROD?'pear-clever-dalmatian.cyclic.app':'localhost:3001';
 // const host='localhost:3001';
 
 exports.email={
@@ -15,8 +15,8 @@ exports.email={
 }
 exports.db= {
     MONGO_URL:process.env.MONGO_URL,
-    DATABASE_NAME:process.env.DATABASE_NAME,
-   MONGO_Password_Prod:process.env.MONGO_Password_Prod
+    DATABASE_NAME:'BooksNodeStarter',
+   MONGO_Password_Prod:'wnQ91lp7IP8qFPWT'
     }
 exports.redis={
     host: process.env.REDIS_HOST,

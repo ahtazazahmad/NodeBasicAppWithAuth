@@ -8,7 +8,7 @@
       "name": "Applet"
     }
   },
-  "host": "localhost:3001",
+  "host": "majestic-dango-461aa5.netlify.app",
   "basePath": "/",
   "schemes": [
     "http",
@@ -186,11 +186,11 @@
               "properties": {
                 "email": {
                   "type": "string",
-                  "example": "email type of string"
+                  "example": "string"
                 },
                 "password": {
                   "type": "string",
-                  "example": "password type of string"
+                  "example": "string"
                 }
               }
             }

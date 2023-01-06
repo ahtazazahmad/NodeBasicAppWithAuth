@@ -4,7 +4,7 @@ const userController = require('../api/Users/UserController');
 exports.authenticate=(req, res, next)=> {
     const token = req.session.token;
     if (!token) {
-      return res.status(401).json({ error: 'Unauthorized' });
+        res.send(Response.getUnauthorizedRequest("Unauthorized")) 
     }
   
     jwt.verify(token,  process.env.JWT_SECERT_KEY, (error, decoded) => {

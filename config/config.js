@@ -4,7 +4,7 @@ const {ENV} = require('../utils/constant');
 exports.PORT=process.env.PORT||3001;
 process.env.NODE_ENV=ENV.PROD;
 
-const host=process.env.NODE_ENV==ENV.PROD?'majestic-dango-461aa5.netlify.app':'localhost:3001';
+const host=process.env.NODE_ENV==ENV.PROD?'nice-cyan-barracuda-toga.cyclic.app':'localhost:3001';
 // const host='localhost:3001';
 
 exports.email={

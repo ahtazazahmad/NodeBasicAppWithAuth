@@ -27,43 +27,10 @@
             "in": "path",
             "required": true,
             "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Books"
-        ],
-        "description": "",
-        "parameters": [
+          },
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Books"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
+            "name": "api_key",
+            "in": "header",
             "type": "string"
           },
           {
@@ -102,29 +69,82 @@
         "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/book/": {
-      "get": {
-        "tags": [
-          "Books"
-        ],
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
+          },
+          "fail": {
+            "description": "API key Validation Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 401
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Unauthorized || Please Enter a Valid API key"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "fail_1": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 400
+                },
+                "message": {
+                  "type": "string",
+                  "example": "error message"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
           }
         }
       },
-      "post": {
+      "delete": {
         "tags": [
           "Books"
         ],
         "description": "",
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "api_key",
+            "in": "header",
+            "type": "string"
+          },
           {
             "name": "obj",
             "in": "body",
@@ -161,6 +181,388 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "fail": {
+            "description": "API key Validation Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 401
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Unauthorized || Please Enter a Valid API key"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "fail_1": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 400
+                },
+                "message": {
+                  "type": "string",
+                  "example": "error message"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Books"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "api_key",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Jhon Doe"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "Applet"
+                },
+                "year": {
+                  "type": "number",
+                  "example": 2023
+                },
+                "pages": {
+                  "type": "number",
+                  "example": 129
+                }
+              },
+              "required": [
+                "title",
+                "author",
+                "year",
+                "pages"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "fail": {
+            "description": "API key Validation Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 401
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Unauthorized || Please Enter a Valid API key"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "fail_1": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 400
+                },
+                "message": {
+                  "type": "string",
+                  "example": "error message"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/book/": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Jhon Doe"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "Applet"
+                },
+                "year": {
+                  "type": "number",
+                  "example": 2023
+                },
+                "pages": {
+                  "type": "number",
+                  "example": 129
+                }
+              },
+              "required": [
+                "title",
+                "author",
+                "year",
+                "pages"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "fail": {
+            "description": "API key Validation Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 401
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Unauthorized || Please Enter a Valid API key"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "fail_1": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 400
+                },
+                "message": {
+                  "type": "string",
+                  "example": "error message"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Jhon Doe"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "Applet"
+                },
+                "year": {
+                  "type": "number",
+                  "example": 2023
+                },
+                "pages": {
+                  "type": "number",
+                  "example": 129
+                }
+              },
+              "required": [
+                "title",
+                "author",
+                "year",
+                "pages"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "fail": {
+            "description": "API key Validation Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 401
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Unauthorized || Please Enter a Valid API key"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "fail_1": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 400
+                },
+                "message": {
+                  "type": "string",
+                  "example": "error message"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
           }
         }
       }
@@ -199,7 +601,129 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 200
+                },
+                "message": {
+                  "type": "string",
+                  "example": "User login Successfully"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string",
+                      "example": "eyJh"
+                    }
+                  },
+                  "required": [
+                    "token"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message",
+                "data"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "2000": {
+            "description": "API key Validation Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 200
+                },
+                "message": {
+                  "type": "string",
+                  "example": "User Not Found"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "fail": {
+            "description": "API key Validation Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 401
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Unauthorized || Please Enter a Valid API key"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "fail_1": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "fail"
+                },
+                "statusCode": {
+                  "type": "number",
+                  "example": 400
+                },
+                "message": {
+                  "type": "string",
+                  "example": "error message"
+                }
+              },
+              "required": [
+                "status",
+                "statusCode",
+                "message"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
           }
         }
       }

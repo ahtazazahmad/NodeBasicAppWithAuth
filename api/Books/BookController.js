@@ -7,8 +7,26 @@ let Book = require('./BookModel');
  * GET /book route to retrieve all the books.
  */
 exports.getBooks=(req, res,next) =>{
-   // #swagger.tags = ['Books']
-   
+/*
+ #swagger.tags = ['Books']
+ #swagger.responses[200] = {
+            description: 'list all books',
+            schema: { 
+              $status: "success",
+              $statusCode: 200,
+              $message: "list all books",
+              $data: [
+                {            
+            $_id: "63b7fc6903a1632296ce04de",
+            $title: "english",
+            $author: "ahtazaz",
+            $year: 2023,
+            $pages: 12,
+            $createdAt: "2023-01-06T10:48:09.103Z"        
+                }
+                    ]
+    }
+*/ 
     try {
         
     let query = Book.find({});
@@ -40,6 +58,23 @@ exports.postBook=(req, res,next) =>{
         $pages: 129,
                 }
 }
+ #swagger.responses[200] = {
+            description: 'Book successfully added!',
+            schema: { 
+              $status: "success",
+              $statusCode: 200,
+              $message: "Book successfully added!",
+              $data: 
+                {            
+            $_id: "63b7fc6903a1632296ce04de",
+            $title: "english",
+            $author: "ahtazaz",
+            $year: 2023,
+            $pages: 12,
+            $createdAt: "2023-01-06T10:48:09.103Z"        
+                }
+                    
+    }
  */
     try {
           //Creates a new book
@@ -65,7 +100,25 @@ exports.postBook=(req, res,next) =>{
  * GET /book/:id route to retrieve a book given its id.
  */
 exports.getBook=(req, res,next) =>{
-       // #swagger.tags = ['Books']
+  /*
+    #swagger.tags = ['Books']
+       #swagger.responses[200] = {
+        description: 'Get a book by its id',
+        schema: { 
+          $status: "success",
+          $statusCode: 200,
+          $data: 
+            {            
+        $_id: "63b7fc6903a1632296ce04de",
+        $title: "english",
+        $author: "ahtazaz",
+        $year: 2023,
+        $pages: 12,
+        $createdAt: "2023-01-06T10:48:09.103Z"        
+            }
+                
+}
+*/
     try {
         Book.findById(req.params.id, (err, book) => {
             if(err) res.send(err);
@@ -82,7 +135,22 @@ exports.getBook=(req, res,next) =>{
  * DELETE /book/:id to delete a book given its id.
  */
 exports.deleteBook=(req, res,next) =>{
-       // #swagger.tags = ['Books']
+       /*
+        #swagger.tags = ['Books']
+       #swagger.responses[200] = {
+        description: 'Book successfully added!',
+        schema: { 
+          $status: "success",
+          $statusCode: 200,
+          $message:  "Book successfully deleted!",
+          $data: 
+            {            
+         $acknowledged: true,
+        $deletedCount: 1      
+            }
+                
+}
+*/
     try {
         Book.remove({_id : req.params.id}, (err, result) => {
             res.send(Response.getOkRequest(result,"Book successfully deleted!"));
@@ -110,6 +178,24 @@ exports.updateBook=(req, res,next) =>{
         $year: 2023,
         $pages: 129,
                 }
+}
+  #swagger.tags = ['Books']
+       #swagger.responses[200] = {
+        description: 'Book updated by its id',
+        schema: { 
+          $status: "success",
+          $statusCode: 200,
+          $message: "Book updated!",
+          $data: 
+            {            
+        $_id: "63b7fc6903a1632296ce04de",
+        $title: "english",
+        $author: "ahtazaz",
+        $year: 2023,
+        $pages: 12,
+        $createdAt: "2023-01-06T10:48:09.103Z"        
+            }
+                
 }
  */
        let {title,author,year,pages}=req.body;

@@ -7,8 +7,9 @@ const authenticate = require('../medalware/auth.js');
 // //add routes here
 
 function routes(app){
- 
-    app.use('/api/book',authenticate.authenticate,bookRouter)
+
+    app.use('/api/book',authenticate.authenticate,Header.verfiyHeader,bookRouter)
+   // app.use('/api/book',bookRouter)
     app.use('/api/user',Header.verfiyHeader,userRouter)
     // app.use('*',(req,res)=>{
     // res.send(Response.getNotFound("Please hit a valid Endpoint"))

@@ -32,8 +32,8 @@ exports.login=(req,res,next)=>{
                $token: "eyJh" }
               }
     }
-#swagger.responses[2000] = {
-            description: 'API key Validation Error',
+#swagger.responses[2001] = {
+            description: 'User Not Found',
             schema: { 
                   $status: "success",
                   $statusCode: 200,

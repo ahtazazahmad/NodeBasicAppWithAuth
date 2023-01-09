@@ -26,6 +26,7 @@ exports.getBooks=(req, res,next) =>{
                 }
                     ]
     }
+}
 */ 
     try {
         
@@ -75,6 +76,7 @@ exports.postBook=(req, res,next) =>{
                 }
                     
     }
+}
  */
     try {
           //Creates a new book
@@ -103,7 +105,7 @@ exports.getBook=(req, res,next) =>{
   /*
     #swagger.tags = ['Books']
        #swagger.responses[200] = {
-        description: 'Get a book by its id',
+        description: "Get a book by its id",
         schema: { 
           $status: "success",
           $statusCode: 200,
@@ -116,7 +118,7 @@ exports.getBook=(req, res,next) =>{
         $pages: 12,
         $createdAt: "2023-01-06T10:48:09.103Z"        
             }
-                
+        }       
 }
 */
     try {
@@ -137,8 +139,8 @@ exports.getBook=(req, res,next) =>{
 exports.deleteBook=(req, res,next) =>{
        /*
         #swagger.tags = ['Books']
-       #swagger.responses[200] = {
-        description: 'Book successfully added!',
+        #swagger.responses[200] = {
+        description: "Book successfully added!",
         schema: { 
           $status: "success",
           $statusCode: 200,
@@ -148,6 +150,7 @@ exports.deleteBook=(req, res,next) =>{
          $acknowledged: true,
         $deletedCount: 1      
             }
+        }
                 
 }
 */
@@ -186,8 +189,7 @@ exports.updateBook=(req, res,next) =>{
           $status: "success",
           $statusCode: 200,
           $message: "Book updated!",
-          $data: 
-            {            
+          $data:  {            
         $_id: "63b7fc6903a1632296ce04de",
         $title: "english",
         $author: "ahtazaz",
@@ -196,6 +198,7 @@ exports.updateBook=(req, res,next) =>{
         $createdAt: "2023-01-06T10:48:09.103Z"        
             }
                 
+}
 }
  */
        let {title,author,year,pages}=req.body;

@@ -163,7 +163,7 @@ exports.deleteBook=(req, res,next) =>{
 }
 
 /*
- * PUT /book/:id to updatea a book given its id
+ * PUT /book/:id to updatea a book given its id s
  */
 exports.updateBook=(req, res,next) =>{
   /*
